@@ -1,13 +1,19 @@
 import { createRouter, createWebHistory, type RouteRecordRaw } from 'vue-router'
 import NProgress from 'nprogress'
-import homeRouter from './home-router'
+import productsRouter from './products-router'
 
 NProgress.configure({ showSpinner: false })
 
 const routes: RouteRecordRaw[] = [
   {
     path: '/',
-    ...homeRouter
+    name: 'home',
+    component: () => import(/* webpackChunkName: "home-view" */ '@/views/HomeView.vue')
+  },
+  {
+    path: '/products',
+    name: 'products',
+    ...productsRouter
   },
   {
     path: '/promotions',
@@ -20,9 +26,9 @@ const routes: RouteRecordRaw[] = [
     component: () => import(/* webpackChunkName: "blog-view" */ '@/views/BlogView.vue')
   },
   {
-    path: '/blog',
-    name: 'blog',
-    component: () => import(/* webpackChunkName: "blog-view" */ '@/views/BlogView.vue')
+    path: '/cart',
+    name: 'cart',
+    component: () => import(/* webpackChunkName: "blog-view" */ '@/views/CartView.vue')
   },
   {
     path: '/:pathMatch(.*)+',

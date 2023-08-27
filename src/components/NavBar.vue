@@ -10,8 +10,9 @@
       <!-- Center menu -->
       <div class="d-flex align-center">
         <div v-for="dropdown in navDropDowns" :key="dropdown.label">
-          <v-btn class="text-white" v-if="dropdown.options && dropdown.isDropDown">
+          <v-btn size="large" class="text-white" v-if="dropdown.options && dropdown.isDropDown">
             {{ dropdown.label }}
+
             <v-menu activator="parent">
               <v-list>
                 <v-list-item
@@ -39,7 +40,8 @@
       <!-- Right menu -->
       <div class="d-flex align-center">
         <v-btn
-          class="mx-1 text-white"
+          class="mx-3 text-white"
+          size="large"
           variant="outlined"
           v-for="button in navButtons"
           :key="button.label"

@@ -1,3 +1,5 @@
+import '@mdi/font/css/materialdesignicons.css'
+
 import { createVuetify } from 'vuetify'
 import * as components from 'vuetify/components'
 import * as directives from 'vuetify/directives'
@@ -5,6 +7,9 @@ import * as directives from 'vuetify/directives'
 export const vuetify = createVuetify({
   components,
   directives,
+  icons: {
+    defaultSet: 'mdi', // This is already the default value - only for display purposes
+  },
   theme: {
     themes: {
       light: {
@@ -21,9 +26,9 @@ export const vuetify = createVuetify({
           'disabled-bg': 'rgba(0, 0, 0, 0.12)',
           'disabled-text': 'rgba(0, 0, 0, 0.26)',
           'text-secondary': 'rgba(0, 0, 0, 0.54)',
-          'text-primary': 'rgba(0, 0, 0, 0.87)',
+          'text-primary': 'rgba(0, 0, 0, 0.87)'
         }
-      },
-    },
-  },
+      }
+    }
+  }
 })

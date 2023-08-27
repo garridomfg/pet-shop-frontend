@@ -6,8 +6,8 @@ import { useRouter, type Router } from 'vue-router'
 const useNavBarOpts = () => {
   const router: Router = useRouter()
   const productOpts: DropDownOption[] = [
-    { path: '/cat', label: computed(() => 'Gatos') },
-    { path: '/dogs', label: computed(() => 'Perros') }
+    { path: '/products/cat', label: computed(() => 'Gatos') },
+    { path: '/products/dogs', label: computed(() => 'Perros') }
   ]
   const promotionsOpts: DropDownOption[] = [
     { path: '/promotions', label: computed(() => 'Promotions') }

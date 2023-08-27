@@ -1,7 +1,4 @@
 <template>
-    <div>
-        Promotions
-    </div>
+  <v-container> Promotions </v-container>
 </template>
-<script setup lang="ts">
-</script>
+<script setup lang="ts"></script>

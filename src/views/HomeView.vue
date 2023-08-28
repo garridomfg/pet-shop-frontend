@@ -15,6 +15,8 @@ import { SearchInput, SearchInputList } from '../components'
 const { fetchData, fetchedData } = useProductsGet(productsApi)
 const products = ref<Datum[] | []>([])
 
+// TODO Migrar a composable
+
 const handleSearch = async (term) => {
   if (!term) return (products.value = [])
   await fetchData(`/products?title=${term}`)

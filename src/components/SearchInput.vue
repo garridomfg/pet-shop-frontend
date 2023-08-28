@@ -6,7 +6,7 @@
       label="Search products"
       variant="outlined"
       v-model="searchTerm"
-      @input.prevent="handleSearch"
+      v-debounce.200ms="handleSearch"
     >
       <template v-slot:prepend-inner>
         <v-icon color="primary" base-color="primary">mdi-magnify</v-icon>

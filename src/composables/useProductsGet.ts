@@ -13,7 +13,7 @@ const useProductsGet = (api: AxiosInstance) => {
     error.value = null
 
     try {
-      const { data } = await api.get<Products>(url)
+      const { data } = await api.get<Products | undefined>(url)
       fetchedData.value = data
       return data
     } catch (err: any) {

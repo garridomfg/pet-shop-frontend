@@ -1,5 +1,5 @@
 export default {
-  component: () => import(/* webpackChunkName: "home-layout" */ '@/layouts/ShopLayout.vue'),
+  component: () => import(/* webpackChunkName: "products-layout" */ '@/layouts/ProductsLayout.vue'),
   children: [
     {
       path: 'cat',

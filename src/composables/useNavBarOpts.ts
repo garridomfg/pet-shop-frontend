@@ -1,20 +1,20 @@
-import { computed, type ComputedRef } from 'vue'
+import { computed } from 'vue'
+import { useRouter, type Router } from 'vue-router'
 import type { DropDownOption, NavButtons, NavDropDown } from '@/interfaces/navDropDowns'
 import { ShopCar } from '@/assets/icons'
-import { useRouter, type Router } from 'vue-router'
 
 const useNavBarOpts = () => {
   const router: Router = useRouter()
-  const productOpts: DropDownOption[] = [
-    { path: '/products/cat', label: computed(() => 'Gatos') },
-    { path: '/products/dogs', label: computed(() => 'Perros') }
-  ]
-  const promotionsOpts: DropDownOption[] = [
-    { path: '/promotions', label: computed(() => 'Promotions') }
-  ]
-  const blogOpts: DropDownOption[] = [{ path: '/blog', label: computed(() => 'Blog') }]
 
-  const navDropDowns: ComputedRef<NavDropDown[]> = computed(() => [
+  const productOpts: DropDownOption[] = [
+    { path: '/products/cat', label: 'Cats' },
+    { path: '/products/dogs', label: 'Dogs' }
+  ]
+
+  const promotions: DropDownOption[] = [{ path: '/promotions', label: 'Promotions' }]
+  const blog: DropDownOption[] = [{ path: '/blog', label: 'Blog' }]
+
+  const menuItems = computed<NavDropDown[]>(() => [
     {
       label: 'Products',
       isDropDown: true,
@@ -23,34 +23,46 @@ const useNavBarOpts = () => {
     {
       label: 'Promotions',
       isDropDown: false,
-      options: promotionsOpts
+      options: promotions
     },
     {
       label: 'Blog',
       isDropDown: false,
-      options: blogOpts
+      options: blog
     }
   ])
 
-  const navButtons: ComputedRef<NavButtons[]> = computed(() => [
+  const navButtons = computed<NavButtons[]>(() => [
     {
       icon: ShopCar,
       label: 'CART',
       count: 0,
-      fn: () => router.push({path: '/cart'})
+      fn: () => router.push({ path: '/cart' })
     },
     {
       label: 'LOGIN',
       fn: () => {
-        console.log('HOLA PA')
+        console.log('LOGIN')
       }
     }
   ])
 
+  const goToHome = (): void => {
+    router.push({ path: '/' })
+  }
+
+  const handleNavigation = (path: string): void => {
+    router.push({ path })
+  }
+
   return {
     // Computed
-    navDropDowns,
-    navButtons
+    menuItems,
+    navButtons,
+
+    // Methods
+    goToHome,
+    handleNavigation
   }
 }
 

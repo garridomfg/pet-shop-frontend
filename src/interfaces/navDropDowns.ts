@@ -1,4 +1,4 @@
-import type { ComputedRef, Component } from 'vue'
+import type {  Component } from 'vue'
 
 export type EmitFunction = (
   event: 'on:close' | 'on:drop-down' | 'on:input-search',
@@ -13,7 +13,7 @@ export interface NavDropDown {
 
 export interface DropDownOption {
   path: string
-  label: ComputedRef<string>
+  label: string
   fn?: () => void
 }
 

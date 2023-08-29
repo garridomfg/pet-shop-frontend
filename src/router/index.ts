@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory, type RouteRecordRaw } from 'vue-router'
 import NProgress from 'nprogress'
 import productsRouter from './products-router'
+import shopRouter from './shop-router'
 
 NProgress.configure({ showSpinner: false })
 
@@ -14,6 +15,11 @@ const routes: RouteRecordRaw[] = [
     path: '/products',
     name: 'products',
     ...productsRouter
+  },
+  {
+    path: '/shop',
+    name: 'shop',
+    ...shopRouter
   },
   {
     path: '/promotions',
@@ -42,12 +48,10 @@ const router = createRouter({
   routes
 })
 
-router.beforeEach(async (to, from) => {
+router.beforeEach(async (to) => {
   if (to.name) {
     NProgress.start()
   }
-
-  console.log(from)
 })
 
 router.afterEach(() => {

@@ -1,4 +1,4 @@
-.search {
+.search-bar {
     margin: 48px auto;
     max-width: 628px;
     position: relative;
@@ -8,3 +8,39 @@
         display: none;
     }
 }
+
+// Promotion Carousel
+.promotion-carousel {
+    & h1 {
+        background: rgba(0, 0, 0, 0.26);
+    }
+    & .text-h1 {
+        margin: 0 !important;
+    }
+    & p {
+        background: rgba(0, 0, 0, 0.26);
+        font-size: 20px;
+        font-weight: 500;
+    }
+}
+
+// Products slider
+.slider-title {
+    color: var(--primary500);
+    cursor: pointer;
+    font-size: 60px;
+    font-weight: 300;
+    margin-bottom: 16px;
+  }
+  
+  .slider-card {
+    border-radius: 6px;
+    cursor: pointer;
+    height: 100%;
+    padding: 30px 50px;
+    transition: 0.5s;
+    width: 288px;
+    &:hover {
+      box-shadow: 0 2px 4px #00000029;
+    }
+  }

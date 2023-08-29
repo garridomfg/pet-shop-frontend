@@ -15,12 +15,12 @@
   </div>
 </template>
 <script setup lang="ts">
-import useInput from '../composables/useInput'
+import useProducts from '../composables/useProducts';
 import { Datum } from '../interfaces/products'
 
 defineProps<{
   products: Datum[] | []
 }>()
 
-const { handleProductDetail } = useInput()
+const { handleProductDetail } = useProducts()
 </script>

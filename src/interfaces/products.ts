@@ -17,19 +17,19 @@ export interface Products {
 }
 
 export interface Data {
-  brand?: Brand
   category_uuid?: string
-  category?: Brand
-  content?: string
-  created_at?: string
-  deleted_at?: null
+  title?: string
+  uuid?: string
+  price?: number
   description?: string
   metadata?: Metadata
-  price?: number
-  slug?: string
-  title?: string
+  created_at?: string
   updated_at?: string
-  uuid?: string
+  deleted_at?: string | null
+  category?: Brand
+  brand?: Brand
+  content?: string
+  slug?: string
 }
 
 export interface Brand {

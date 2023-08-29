@@ -1,7 +1,7 @@
 import type {  Component } from 'vue'
 
 export type EmitFunction = (
-  event: 'on:close' | 'on:drop-down' | 'on:input-search',
+  event: 'on:input-search',
   term?: string
 ) => void
 

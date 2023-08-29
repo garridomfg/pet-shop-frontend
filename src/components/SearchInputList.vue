@@ -3,7 +3,7 @@
     <v-card class="mt-0" max-width="628">
       <v-list>
         <v-list-item
-          v-for="product in products"
+          v-for="product in props.products"
           :key="product.uuid"
           :value="product.uuid"
           @click="() => handleProductDetail(product.uuid)"
@@ -16,10 +16,10 @@
 </template>
 <script setup lang="ts">
 import useProducts from '../composables/useProducts';
-import { Datum } from '../interfaces/products'
+import { Data } from '../interfaces/products'
 
-defineProps<{
-  products: Datum[] | []
+const props = defineProps<{
+  products: Data[] | []
 }>()
 
 const { handleProductDetail } = useProducts()

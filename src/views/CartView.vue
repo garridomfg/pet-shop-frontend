@@ -1,5 +1,5 @@
 <template>
-    <v-container> Cart </v-container>
+    <div> Cart </div>
   </template>
   <script setup lang="ts"></script>
   

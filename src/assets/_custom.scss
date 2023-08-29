@@ -9,7 +9,7 @@
     }
 }
 
-// Promotion Carousel
+// Promotion carousel
 .promotion-carousel {
     & h1 {
         background: rgba(0, 0, 0, 0.26);
@@ -31,9 +31,9 @@
     font-size: 60px;
     font-weight: 300;
     margin-bottom: 16px;
-  }
-  
-  .slider-card {
+}
+
+.slider-card {
     border-radius: 6px;
     cursor: pointer;
     height: 100%;
@@ -41,6 +41,31 @@
     transition: 0.5s;
     width: 288px;
     &:hover {
-      box-shadow: 0 2px 4px #00000029;
+        box-shadow: 0 2px 4px #00000029;
     }
-  }
+}
+
+// Blog slider
+.blog-title {
+    color: var(--primary500);
+    cursor: pointer;
+    font-size: 60px;
+    margin-bottom: 16px;
+}
+
+// Footer
+
+footer {
+    color: var(--text-secondary);
+    & a {
+        background-color: transparent;
+        text-decoration: unset;
+        color: var(--text-secondary);
+    }
+}
+
+.footer-logo {
+    color: var(--primary500);
+    height: 52px;
+    width: 55px;
+}

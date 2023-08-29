@@ -2,11 +2,11 @@
 
 export interface Products {
   current_page: number
-  data: Datum[]
+  data: Data[]
   first_page_url: string
   from: number
-  last_page: number
   last_page_url: string
+  last_page: number
   links: Link[]
   next_page_url: string
   path: string
@@ -16,20 +16,20 @@ export interface Products {
   total: number
 }
 
-export interface Datum {
+export interface Data {
+  brand?: Brand
   category_uuid?: string
-  title?: string
-  uuid?: string
-  price?: number
+  category?: Brand
+  content?: string
+  created_at?: string
+  deleted_at?: null
   description?: string
   metadata?: Metadata
-  created_at?: string
-  updated_at?: string
-  deleted_at?: null
-  category?: Brand
-  brand?: Brand
-  content?: string
+  price?: number
   slug?: string
+  title?: string
+  updated_at?: string
+  uuid?: string
 }
 
 export interface Brand {
@@ -41,6 +41,7 @@ export interface Brand {
 }
 
 export interface Metadata {
+  author?: string
   brand?: string
   image?: string
   valid_from?: string

@@ -1,4 +1,4 @@
 <template>
-  <v-container> Products by category </v-container>
+  <div> Products by category </div>
 </template>
 <script setup lang="ts"></script>

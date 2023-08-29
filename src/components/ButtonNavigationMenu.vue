@@ -4,7 +4,7 @@
       class="mx-3 text-white"
       size="large"
       variant="outlined"
-      v-for="button in buttons"
+      v-for="button in props.buttons"
       :key="button.label"
       @click="button.fn"
       :prepend-icon="button.icon"
@@ -20,7 +20,8 @@
 <script setup lang="ts">
 import { NavButtons } from '../interfaces/navDropDowns'
 
-defineProps<{
+const props = defineProps<{
   buttons: NavButtons[]
 }>()
 </script>
+../interfaces/navbar

@@ -1,9 +1,14 @@
 <template>
   <v-app>
     <nav-bar></nav-bar>
-    <router-view></router-view>
+    <v-main>
+      <v-container>
+        <router-view></router-view>
+      </v-container>
+    </v-main>
+    <shop-footer></shop-footer>
   </v-app>
 </template>
 <script setup lang="ts">
-import NavBar from './components/NavBar.vue'
+import { NavBar, ShopFooter } from './components'
 </script>

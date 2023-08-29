@@ -1,11 +1,11 @@
 <template>
   <div>
-    <p class="slider-title text-capitalize" @click="() => handleCategoriesByProduct(categoryId)">
-      {{ title }}
+    <p class="slider-title text-capitalize" @click="() => handleCategoriesByProduct(props.categoryId)">
+      {{ props.title }}
     </p>
 
     <v-slide-group class="pa-4" show-arrows>
-      <v-slide-group-item v-for="product in products" :key="product.uuid">
+      <v-slide-group-item v-for="product in props.products" :key="product.uuid">
         <div class="slider-card" @click="() => handleProductDetail(product.uuid)">
           <v-responsive>
             <v-img :height="220" cover :src="getImageUrl(product.metadata.image)"></v-img>
@@ -23,11 +23,11 @@
   </div>
 </template>
 <script setup lang="ts">
-import { Datum } from '../interfaces/products'
+import { Data } from '../interfaces/products'
 import useProducts from '../composables/useProducts'
 
-defineProps<{
-  products: Datum[] | []
+const props = defineProps<{
+  products?: Data[] | []
   title?: string
   categoryId?: string
 }>()

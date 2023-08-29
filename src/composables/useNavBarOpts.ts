@@ -1,6 +1,6 @@
 import { computed } from 'vue'
 import { useRouter, type Router } from 'vue-router'
-import type { DropDownOption, NavButtons, NavDropDown } from '@/interfaces/navDropDowns'
+import type { DropDownOption, NavButtons, NavDropDown } from '../interfaces/navbar'
 import { ShopCar } from '@/assets/icons'
 
 const useNavBarOpts = () => {

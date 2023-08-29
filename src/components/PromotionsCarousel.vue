@@ -19,10 +19,10 @@
 </template>
 <script setup lang="ts">
 import useProducts from '../composables/useProducts'
-import { Datum } from '../interfaces/products'
+import { Data } from '../interfaces/products'
 
 defineProps<{
-  promotions: Datum[] | []
+  promotions: Data[] | []
 }>()
 
 const { getImageUrl } = useProducts()

@@ -1,6 +1,6 @@
 <template>
   <div class="d-flex align-center">
-    <div v-for="dropdown in menuItems" :key="dropdown.label">
+    <div v-for="dropdown in props.menuItems" :key="dropdown.label">
       <v-btn size="large" class="text-white" v-if="dropdown.options && dropdown.isDropDown">
         {{ dropdown.label }}
 
@@ -10,7 +10,7 @@
               v-for="item in dropdown.options"
               :key="item.label"
               :value="item.label"
-              @click="handleNavigation(item.path)"
+              @click="props.handleNavigation(item.path)"
             >
               <v-list-item-title>{{ item.label }}</v-list-item-title>
             </v-list-item>
@@ -21,7 +21,7 @@
       <v-btn
         class="text-white"
         v-if="!dropdown.isDropDown"
-        @click="handleNavigation(dropdown.options[0].path)"
+        @click="props.handleNavigation(dropdown.options[0].path)"
       >
         {{ dropdown.options[0].label }}
       </v-btn>
@@ -31,8 +31,9 @@
 <script setup lang="ts">
 import { NavDropDown } from '../interfaces/navDropDowns'
 
-defineProps<{
+const props = defineProps<{
   menuItems: NavDropDown[]
   handleNavigation: (path: string) => void
 }>()
 </script>
+../interfaces/navbar

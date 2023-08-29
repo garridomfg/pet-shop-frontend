@@ -1,4 +1,4 @@
 <template>
-  <v-container> Blog </v-container>
+  <div> Blog </div>
 </template>
 <script setup lang="ts"></script>

@@ -1,4 +1,4 @@
 <template>
-  <v-container> Not Found </v-container>
+  <div> Not Found </div>
 </template>
 <script setup lang="ts"></script>

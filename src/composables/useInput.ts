@@ -1,4 +1,4 @@
-import type { EmitFunction } from '@/interfaces/navDropDowns'
+import type { EmitFunction } from '../interfaces/navbar'
 import { ref } from 'vue'
 
 const useInput = (emit?: EmitFunction) => {

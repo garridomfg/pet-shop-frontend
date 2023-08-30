@@ -15,6 +15,7 @@ const useProducts = () => {
   const productsByCategory = ref<(Data[] | undefined)[]>([])
   const blogs = ref<Data[]>([])
 
+  // Get the image to display within sliders
   const getImageUrl = (imageId: string): string => {
     return `http://pet-shop.buckhill.com.hr/api/v1/file/${imageId}`
   }
@@ -31,6 +32,7 @@ const useProducts = () => {
     })
   }
 
+  // Fetch products by category
   const fetchDataByCategory = async (id: string | undefined): Promise<Data[] | undefined> => {
     if (!id) return
     const resp = await fetchData(`/products?category=${id}`)
@@ -38,6 +40,7 @@ const useProducts = () => {
     return data || []
   }
 
+  // Fetch products with the searchbar within home view
   const handleSearch = async (term: string): Promise<Data[] | undefined> => {
     if (!term) {
       products.value = []
@@ -49,6 +52,7 @@ const useProducts = () => {
     return products.value
   }
 
+  // Fetch all the data within home view (promotions, blogs and categories)
   const fetchInitialData = async () => {
     await Promise.all([
       fetchData(`/main/promotions`).then((data) => (promotions.value = data ? data.data : [])),

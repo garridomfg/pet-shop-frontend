@@ -1,10 +1,3 @@
 <template>
-  <div>
-    Cat
-  </div>
+  <div>Cat</div>
 </template>
-<script setup lang="ts">
-</script>
-<style>
-  
-</style>

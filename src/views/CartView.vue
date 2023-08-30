@@ -1,4 +1,3 @@
 <template>
-    <div> Cart </div>
-  </template>
-  
+  <div>Cart</div>
+</template>

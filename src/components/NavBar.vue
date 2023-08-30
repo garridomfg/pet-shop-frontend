@@ -15,11 +15,12 @@
       <!-- /Right menu -->
     </v-container>
   </v-toolbar>
+ 
 </template>
 <script setup lang="ts">
 import useNavBarOpts from '../composables/useNavBarOpts'
 import { ButtonNavigationMenu, NavigationMenu } from '.'
-import { FingerPrint, FingerPrintText } from '@/assets/icons'
+import { FingerPrint, FingerPrintText } from '../assets/icons'
 
 const { menuItems, navButtons, handleNavigation, goToHome } = useNavBarOpts()
 </script>

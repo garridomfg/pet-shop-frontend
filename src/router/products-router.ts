@@ -5,19 +5,19 @@ export default {
       path: 'cat',
       name: 'cat',
       component: () =>
-        import(/* webpackChunkName: "cat-component" */ '@/components/CatComponent.vue')
+        import(/* webpackChunkName: "cat-views" */ '@/views/CatComponent.vue')
     },
     {
       path: 'dogs',
       name: 'dogs',
       component: () =>
-        import(/* webpackChunkName: "dog-component" */ '@/components/DogComponent.vue')
+        import(/* webpackChunkName: "dog-views" */ '@/views/DogComponent.vue')
     },
     {
       path: ':id',
       name: 'product-detail',
       component: () =>
-        import(/* webpackChunkName: "product-detail-component" */ '@/components/ProductDetail.vue')
+        import(/* webpackChunkName: "product-detail-views" */ '@/views/ProductDetail.vue')
     }
   ]
 }

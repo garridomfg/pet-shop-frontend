@@ -41,9 +41,7 @@ const useNavBarOpts = () => {
     },
     {
       label: 'LOGIN',
-      fn: () => {
-        console.log('LOGIN')
-      }
+      fn: () => {}
     }
   ])
 

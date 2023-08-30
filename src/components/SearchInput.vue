@@ -23,3 +23,9 @@ const emit = defineEmits<{
 
 const { searchTerm, handleSearch } = useInput(emit)
 </script>
+
+<style>
+ .v-input__details {
+  display: none;
+ }
+</style>

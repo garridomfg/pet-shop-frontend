@@ -37,6 +37,11 @@ const routes: RouteRecordRaw[] = [
     component: () => import(/* webpackChunkName: "blog-view" */ '@/views/CartView.vue')
   },
   {
+    path: '/recover',
+    name: 'recover',
+    component: () => import(/* webpackChunkName: "recover-password-view" */ '@/views/RecoverPasswordView.vue')
+  },
+  {
     path: '/:pathMatch(.*)+',
     name: '404',
     component: () => import(/* webpackChunkName: "404-view" */ '@/views/PageNotFound.vue')

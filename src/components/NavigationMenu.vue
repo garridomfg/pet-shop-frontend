@@ -29,7 +29,7 @@
   </div>
 </template>
 <script setup lang="ts">
-import { NavDropDown } from '../interfaces/navDropDowns'
+import { NavDropDown } from '../interfaces/navbar'
 
 const props = defineProps<{
   menuItems: NavDropDown[]

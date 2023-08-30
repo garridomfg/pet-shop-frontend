@@ -14,7 +14,7 @@
         class="text-white"
         block
         style="background-color: var(--primary500)"
-        :loading="isLoading"
+        :loading="authStore.isLoading"
         >LOG IN</v-btn
       >
       <div class="d-flex justify-space-between mt-10 w-100">
@@ -23,7 +23,7 @@
           >Don't have an account? Sign up</span
         >
       </div>
-      <div v-if="errorMessage" class="text-red font-weight-bold">{{ errorMessage }}</div>
+      <div v-if="authStore.errorMessage" class="text-red font-weight-bold">{{ authStore.errorMessage }}</div>
     </div>
   </form>
 </template>
@@ -32,6 +32,7 @@ import { useForm } from 'vee-validate'
 import useLogin from '../composables/useLogin'
 import FormBuilder from './FormBuilder.vue'
 import FooterLogo from '@/assets/icons/FooterLogo.vue'
+import { useAuthStore } from '../stores/auth'
 
 defineProps<{
   toggleLoginRegister: () => void
@@ -42,10 +43,12 @@ const emit = defineEmits<{
 }>()
 
 const { controlledValues } = useForm()
-const { handleRecoverPassword, loginFields, handleLogin, errorMessage, isLoading } = useLogin(emit)
+const { handleRecoverPassword, loginFields } = useLogin(emit)
+const authStore = useAuthStore()
 
 const handleSubmit = async () => {
   const user = { ...controlledValues.value }
-  await handleLogin(user)
+  await authStore.login(user)
+  // await handleLogin(user)
 }
 </script>

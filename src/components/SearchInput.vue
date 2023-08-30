@@ -25,7 +25,7 @@ const { searchTerm, handleSearch } = useInput(emit)
 </script>
 
 <style>
- .v-input__details {
+ .v-text-field .v-input__details {
   display: none;
  }
 </style>

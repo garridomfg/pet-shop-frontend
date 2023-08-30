@@ -1,5 +1,6 @@
 import BlogPost from './BlogPost.vue'
 import ButtonNavigationMenu from './ButtonNavigationMenu.vue'
+import EmptyState from './EmptyState.vue'
 import FooterItemsList from './FooterItemsList.vue'
 import LoginForm from './LoginForm.vue'
 import NavBar from './NavBar.vue'
@@ -15,6 +16,7 @@ import ShopInput from './ShopInput.vue'
 export {
   BlogPost,
   ButtonNavigationMenu,
+  EmptyState,
   FooterItemsList,
   LoginForm,
   NavBar,

@@ -1,52 +1,53 @@
 <template>
-  <div class="login-form elevation-2 px-16 py-12" style="max-height: 890px;">
+  <form @submit.prevent="handleSubmit" class="login-form elevation-2 px-16 py-12">
     <div class="d-flex flex-column align-center justify-center">
       <footer-logo class="d-flex flex-column justify-center align-center text-white logo-wrapper" />
       <p class="text-h5 text-center mt-3 mb-5">Sign up</p>
     </div>
     <v-row>
-      <v-col class="v-col-6">
-        <shop-input :input-label="'First Name*'" :input-type="'text'"></shop-input>
-      </v-col>
-      <v-col class="v-col-6">
-        <shop-input :input-label="'Last Name*'" :input-type="'text'"></shop-input
-      ></v-col>
-      <v-col class="v-col-12"
-        ><shop-input :input-label="'Email Address*'" :input-type="'email'"></shop-input
-      ></v-col>
-      <v-col class="v-col-12"
-        ><shop-input :input-label="'Phone Number*'" :input-type="'number'"></shop-input
-      ></v-col>
-      <v-col class="v-col-12"
-        ><shop-input :input-label="'Address*'" :input-type="'text'"></shop-input
-      ></v-col>
-      <v-col class="v-col-12"
-        ><shop-input :input-label="'Password*'" :input-type="'password'"></shop-input
-      ></v-col>
-      <v-col class="v-col-12"
-        ><shop-input :input-label="'Confirm Password*'" :input-type="'password'"></shop-input
-      ></v-col>
-      <v-col class="v-col-12"
-        ><shop-input
-          class="align-self-start"
-          :input-label="'I want to receive inspiration, marketing promotions and updates via email.'"
-          :input-type="'checkbox'"
-        ></shop-input
-      ></v-col>
+      <form-builder :fields="registerFields" />
     </v-row>
-    <v-btn variant="elevated" class="text-white" block style="background-color: var(--primary500)"
+    <v-btn
+      type="submit"
+      variant="elevated"
+      class="text-white"
+      block
+      style="background-color: var(--primary500)"
+      :loading="isLoading"
       >SIGN UP</v-btn
     >
     <div class="d-flex justify-center mt-5 w-100">
       <span class="auth-actions" @click="toggleLoginRegister">Already have an account? Login</span>
     </div>
-  </div>
+    <div v-if="errorMessage" class="text-red font-weight-bold">{{ errorMessage }}</div>
+  </form>
 </template>
 <script setup lang="ts">
+import { useForm } from 'vee-validate'
+import useLogin from '../composables/useLogin'
+import FormBuilder from './FormBuilder.vue'
 import { FooterLogo } from '../assets/icons'
-import ShopInput from './ShopInput.vue'
 
-defineProps<{
+const props = defineProps<{
   toggleLoginRegister: () => void
 }>()
+
+const emit = defineEmits<{
+  (e: 'on:close-overlay'): void,
+  (e: 'on:toggle-menu'): void
+}>()
+
+const { controlledValues, validate, resetForm } = useForm()
+const { registerFields, handleRegister, errorMessage, isLoading } = useLogin(emit)
+
+const handleSubmit = async () => {
+  const { valid } = await validate()
+  if (!valid) return
+  const user = {
+    ...controlledValues.value
+  }
+  await handleRegister(user)
+  resetForm()
+  props.toggleLoginRegister()
+}
 </script>

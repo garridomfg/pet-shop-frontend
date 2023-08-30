@@ -1,8 +1,8 @@
 import { ref } from 'vue'
-import type { AxiosInstance } from 'axios'
 import type { Products } from '@/interfaces/products'
+import shopApi from '@/api/shopApi'
 
-const useProductsGet = (api: AxiosInstance) => {
+const useApiGet = () => {
   const isLoading = ref<boolean>(false)
   const fetchedData = ref<Products | undefined>(undefined)
   const error = ref<string | null>(null)
@@ -13,7 +13,7 @@ const useProductsGet = (api: AxiosInstance) => {
     error.value = null
 
     try {
-      const { data } = await api.get<Products | undefined>(url)
+      const { data } = await shopApi.get<Products | undefined>(url)
       fetchedData.value = data
       return data
     } catch (err: any) {
@@ -31,4 +31,4 @@ const useProductsGet = (api: AxiosInstance) => {
   }
 }
 
-export default useProductsGet
+export default useApiGet

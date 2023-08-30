@@ -1,13 +1,12 @@
 import { ref } from 'vue'
 import { useRouter, type Router } from 'vue-router'
-import useProductsGet from '../composables/useProductsGet'
-import shopApi from '../api/shopApi'
+import useApiGet from './useApiGet'
 import { type Data } from '../interfaces/products'
 
 const useProducts = () => {
   // Composables
   const router: Router = useRouter()
-  const { fetchData, fetchedData } = useProductsGet(shopApi)
+  const { fetchData, fetchedData } = useApiGet()
 
   // Data
   const products = ref<Data[]>([])

@@ -1,18 +1,20 @@
 <template>
-  <div class="login-form elevation-2 px-16 py-12">
+  <form @submit.prevent="handleSubmit" class="login-form elevation-2 px-16 py-12">
     <div class="d-flex flex-column align-center justify-center">
       <footer-logo class="d-flex flex-column justify-center align-center text-white logo-wrapper" />
       <p class="text-h5 text-center mt-3 mb-5">Login</p>
       <v-col class="col-12">
-        <shop-input :input-label="'Email'" :input-type="'email'"></shop-input>
-        <shop-input :input-label="'Password'" :input-type="'password'"></shop-input>
-        <shop-input
-          class="align-self-start"
-          :input-label="'Remember me'"
-          :input-type="'checkbox'"
-        ></shop-input>
+        <v-row>
+          <form-builder :fields="loginFields" />
+        </v-row>
       </v-col>
-      <v-btn variant="elevated" class="text-white" block style="background-color: var(--primary500)"
+      <v-btn
+        type="submit"
+        variant="elevated"
+        class="text-white"
+        block
+        style="background-color: var(--primary500)"
+        :loading="isLoading"
         >LOG IN</v-btn
       >
       <div class="d-flex justify-space-between mt-10 w-100">
@@ -21,17 +23,29 @@
           >Don't have an account? Sign up</span
         >
       </div>
+      <div v-if="errorMessage" class="text-red font-weight-bold">{{ errorMessage }}</div>
     </div>
-  </div>
+  </form>
 </template>
 <script setup lang="ts">
+import { useForm } from 'vee-validate'
+import useLogin from '../composables/useLogin'
+import FormBuilder from './FormBuilder.vue'
 import FooterLogo from '@/assets/icons/FooterLogo.vue'
-import { ShopInput } from '.'
-import useLogin from '../composables/useLogin';
 
 defineProps<{
   toggleLoginRegister: () => void
 }>()
 
-const {handleRecoverPassword} = useLogin()
+const emit = defineEmits<{
+  (e: 'on:close-overlay'): void
+}>()
+
+const { controlledValues } = useForm()
+const { handleRecoverPassword, loginFields, handleLogin, errorMessage, isLoading } = useLogin(emit)
+
+const handleSubmit = async () => {
+  const user = { ...controlledValues.value }
+  await handleLogin(user)
+}
 </script>

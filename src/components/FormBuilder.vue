@@ -16,6 +16,7 @@
         variant="outlined"
         :error="(meta.touched && !meta.valid) || !!errorMessage"
         :error-messages="errorMessage"
+        :readonly="schema.readonly"
       ></v-text-field>
       <v-checkbox v-else v-model="schema.value" :label="schema.label"></v-checkbox>
       <ErrorMessage class="text-red" :name="schema.name" />

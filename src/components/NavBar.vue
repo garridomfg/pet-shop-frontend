@@ -11,16 +11,20 @@
       <navigation-menu :menu-items="menuItems" :handle-navigation="handleNavigation" />
       <!-- /Center menu -->
       <!-- Right menu -->
-      <button-navigation-menu :buttons="navButtons" />
+      <button-navigation-menu v-if="!usersStore.currentUser" :buttons="navButtons" />
+      <div v-else>
+       <logged-menu></logged-menu>
+      </div>
       <!-- /Right menu -->
     </v-container>
   </v-toolbar>
- 
 </template>
 <script setup lang="ts">
 import useNavBarOpts from '../composables/useNavBarOpts'
-import { ButtonNavigationMenu, NavigationMenu } from '.'
+import { ButtonNavigationMenu, NavigationMenu, LoggedMenu } from '.'
 import { FingerPrint, FingerPrintText } from '../assets/icons'
+import { useUsersStore } from '../stores/users'
 
 const { menuItems, navButtons, handleNavigation, goToHome } = useNavBarOpts()
+const usersStore = useUsersStore()
 </script>

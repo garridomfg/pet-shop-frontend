@@ -10,28 +10,29 @@ export interface SchemaField {
   label?: string
   class?: string
   rules?: string
+  readonly?: boolean
 }
 
 export interface UserRegistration {
   firstName?: string
   lastName?: string
-  email: string
+  email?: string
   address?: string
   password?: string
   password2?: string
-  confirm: boolean
+  remember_me?: boolean
 }
 
 export interface UserCredentials {
-  confirm?: boolean;
-  email: string;
-  password: string;
-  address?: string;
-  first_name?: string;
-  is_marketing?: boolean;
-  last_name?: string;
-  password_confirmation?: string;
-  phone_number?: string;
+  remember_me?: boolean
+  email: string
+  password: string
+  address?: string
+  first_name?: string
+  is_marketing?: boolean
+  last_name?: string
+  password_confirmation?: string
+  phone_number?: string
 }
 
 export interface User {
@@ -47,6 +48,7 @@ export interface UserData {
   first_name?: string
   last_name?: string
   email?: string
+  email_verified_at?: boolean | null
   avatar?: string | null
   address?: string
   phone_number?: string
@@ -54,4 +56,5 @@ export interface UserData {
   updated_at?: string
   created_at?: string
   token?: string
+  last_login_at?: string
 }

@@ -1,9 +1,9 @@
-import { type UserCredentials } from './../interfaces/login'
+import { type User, type UserRegistration } from '../interfaces/login'
 import { defineStore } from 'pinia'
 import shopApi from '@/api/shopApi'
 
 export type AuthStoreState = {
-  authUser: UserCredentials | null | undefined
+  authUser: User | null | undefined
   error: string | null | undefined
   loading: boolean | null | undefined
 }
@@ -16,19 +16,19 @@ export const useAuthStore = defineStore('auth', {
       loading: undefined
     }) as AuthStoreState,
   getters: {
-    currentUser: (state) => state.authUser,
     errorMessage: (state) => state.error,
-    isLoading: (state) => state.loading
+    isLoading: (state) => state.loading,
+    authToken: (state) => state.authUser?.data?.token
   },
   actions: {
-    async login(user: any): Promise<void> {
+    async login(user: UserRegistration): Promise<void> {
       this.loading = true
       this.error = ''
       this.authUser = undefined
       try {
-        const { data } = await shopApi.post<UserCredentials | undefined>('/user/login', user)
+        const { data } = await shopApi.post<User | undefined>('/user/login', user)
         this.authUser = data
-        localStorage.setItem('currentUser', JSON.stringify(this.authUser))
+        localStorage.setItem('token', JSON.stringify(this.authUser?.data?.token))
       } catch (error: any) {
         console.log(error)
         this.error = error.response.data.errors.length
@@ -40,7 +40,7 @@ export const useAuthStore = defineStore('auth', {
     },
     logout() {
       this.authUser = undefined
-      localStorage.removeItem('currentUser')
+      localStorage.removeItem('token')
     }
   }
 })

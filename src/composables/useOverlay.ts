@@ -2,6 +2,10 @@ import { ref } from 'vue'
 const useOverlay = () => {
   const showOverlay = ref<boolean>(false)
 
+  const openOverlay = (): void => {
+    showOverlay.value = true
+  }
+
   const closeOverlay = (): void => {
     showOverlay.value = false
   }
@@ -11,6 +15,7 @@ const useOverlay = () => {
     showOverlay,
 
     // Methods
+    openOverlay,
     closeOverlay
   }
 }

@@ -75,16 +75,34 @@ footer {
     border-radius: 5px;
     margin: 0 auto;
     width: 550px;
-  }
-  
-  .logo-wrapper {
+}
+
+.logo-wrapper {
     background-color: var(--primary500);
     border-radius: 999px;
     height: 92px;
     width: 92px;
-  }
-  
-  .auth-actions {
+}
+
+.auth-actions {
     color: var(--info);
     cursor: pointer;
-  }
+}
+
+// User details
+
+.user-details-form {
+    background-color: #fff;
+    border-radius: 5px;
+    margin: 0 auto;
+}
+
+.avatar-wrapper {
+    border-right: 1px solid var(--grey300);
+    padding: 0 66px;
+}
+
+.label {
+    color: var(--text-secondary);
+    font-size: 12px;
+}

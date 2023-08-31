@@ -23,7 +23,9 @@
           >Don't have an account? Sign up</span
         >
       </div>
-      <div v-if="authStore.errorMessage" class="text-red font-weight-bold">{{ authStore.errorMessage }}</div>
+      <div v-if="authStore.errorMessage" class="text-red font-weight-bold">
+        {{ authStore.errorMessage }}
+      </div>
     </div>
   </form>
 </template>
@@ -33,6 +35,8 @@ import useLogin from '../composables/useLogin'
 import FormBuilder from './FormBuilder.vue'
 import FooterLogo from '@/assets/icons/FooterLogo.vue'
 import { useAuthStore } from '../stores/auth'
+import { useUsersStore } from '../stores/users'
+import { UserRegistration } from '../interfaces/login'
 
 defineProps<{
   toggleLoginRegister: () => void
@@ -43,12 +47,14 @@ const emit = defineEmits<{
 }>()
 
 const { controlledValues } = useForm()
-const { handleRecoverPassword, loginFields } = useLogin(emit)
+const { handleRecoverPassword, loginFields } = useLogin()
 const authStore = useAuthStore()
+const usersStore = useUsersStore()
 
 const handleSubmit = async () => {
-  const user = { ...controlledValues.value }
+  const user: UserRegistration = { ...controlledValues.value }
   await authStore.login(user)
-  // await handleLogin(user)
+  await usersStore.getUser()
+  emit('on:close-overlay')
 }
 </script>

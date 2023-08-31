@@ -31,6 +31,7 @@ import {
   SearchInput,
   SearchInputList
 } from '../components'
+import { useUsersStore } from '../stores/users'
 
 const {
   products,
@@ -43,5 +44,12 @@ const {
   fetchInitialData
 } = useProducts()
 
-onMounted(fetchInitialData)
+const usersStore = useUsersStore()
+
+onMounted(async () => {
+  if (localStorage.getItem('token')) {
+    usersStore.getUser()
+  }
+  fetchInitialData()
+})
 </script>

@@ -19,6 +19,7 @@ const useLogin = (emit?: EmitFunction) => {
       name: 'email',
       as: 'text',
       label: 'Email',
+      readonly: false,
       class: 'v-col-12'
     },
     {
@@ -27,14 +28,16 @@ const useLogin = (emit?: EmitFunction) => {
       name: 'password',
       as: 'text',
       label: 'Password',
+      readonly: false,
       class: 'v-col-12'
     },
     {
       value: undefined,
       type: 'checkbox',
-      name: 'confirm',
+      name: 'remember_me',
       as: 'checkbox',
       label: 'Remember me',
+      readonly: false,
       class: 'v-col-12'
     }
   ])
@@ -47,7 +50,8 @@ const useLogin = (emit?: EmitFunction) => {
       as: 'text',
       label: 'First Name*',
       class: 'v-col-6',
-      rules: 'required'
+      rules: 'required',
+      readonly: false,
     },
     {
       value: undefined,
@@ -56,7 +60,8 @@ const useLogin = (emit?: EmitFunction) => {
       as: 'text',
       label: 'Last Name*',
       class: 'v-col-6',
-      rules: 'required'
+      rules: 'required',
+      readonly: false,
     },
     {
       value: undefined,
@@ -65,7 +70,8 @@ const useLogin = (emit?: EmitFunction) => {
       as: 'text',
       label: 'Email Address*',
       class: 'v-col-12',
-      rules: 'required|email'
+      rules: 'required|email',
+      readonly: false,
     },
     {
       value: undefined,
@@ -74,7 +80,8 @@ const useLogin = (emit?: EmitFunction) => {
       as: 'text',
       label: 'Phone Number*',
       class: 'v-col-12',
-      rules: 'required'
+      rules: 'required',
+      readonly: false,
     },
     {
       value: undefined,
@@ -83,7 +90,8 @@ const useLogin = (emit?: EmitFunction) => {
       as: 'text',
       label: 'Address*',
       class: 'v-col-12',
-      rules: 'required'
+      rules: 'required',
+      readonly: false,
     },
     {
       value: undefined,
@@ -92,7 +100,8 @@ const useLogin = (emit?: EmitFunction) => {
       as: 'text',
       label: 'Password*',
       class: 'v-col-12',
-      rules: 'required|minLength'
+      rules: 'required|minLength',
+      readonly: false,
     },
     {
       value: undefined,
@@ -101,7 +110,8 @@ const useLogin = (emit?: EmitFunction) => {
       as: 'text',
       label: 'Confirm Password*',
       class: 'v-col-12',
-      rules: 'required|confirmed:@password'
+      rules: 'required|confirmed:@password',
+      readonly: false,
     },
     {
       value: false,
@@ -109,7 +119,8 @@ const useLogin = (emit?: EmitFunction) => {
       name: 'is_marketing',
       as: 'checkbox',
       label: 'I want to receive inspiration, marketing promotions and updates via email.',
-      class: 'v-col-12'
+      class: 'v-col-12',
+      readonly: false,
     }
   ])
 

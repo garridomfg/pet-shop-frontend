@@ -1,68 +1,109 @@
-# frontend
+# Pet shop UI
+This application is part of a dice challenge in which a UI implementation is carried out based on a wireframe provided and various integrations with a PetShop API test are performed.
 
-This template should help get you started developing with Vue 3 in Vite.
-
-## Recommended IDE Setup
-
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
-
-## Type Support for `.vue` Imports in TS
-
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin) to make the TypeScript language service aware of `.vue` types.
-
-If the standalone TypeScript plugin doesn't feel fast enough to you, Volar has also implemented a [Take Over Mode](https://github.com/johnsoncodehk/volar/discussions/471#discussioncomment-1361669) that is more performant. You can enable it by the following steps:
-
-1. Disable the built-in TypeScript Extension
-    1) Run `Extensions: Show Built-in Extensions` from VSCode's command palette
-    2) Find `TypeScript and JavaScript Language Features`, right click and select `Disable (Workspace)`
-2. Reload the VSCode window by running `Developer: Reload Window` from the command palette.
-
-## Customize configuration
-
-See [Vite Configuration Reference](https://vitejs.dev/config/).
-
+This application was developed with Vue.js, and the first two provided user stories were implemented, which are the home page and the login journey.
 ## Project Setup
+You can perform the installation in a local environment or through Docker.
 
-```sh
+### Local environment
+```
 npm install
 ```
 
 ### Compile and Hot-Reload for Development
 
-```sh
+```
 npm run dev
 ```
 
 ### Type-Check, Compile and Minify for Production
 
-```sh
+```
 npm run build
 ```
 
 ### Run Unit Tests with [Vitest](https://vitest.dev/)
 
-```sh
+```
 npm run test:unit
 ```
 
-### Run End-to-End Tests with [Cypress](https://www.cypress.io/)
 
-```sh
-npm run test:e2e:dev
+## Docker installation
+
+If you haven't installed Docker and Docker Compose yet, follow these links for installation instructions:
+
+- [Docker][1]
+- [Docker compose][2]
+
+[1]: https://docs.docker.com/get-docker/
+[2]: https://docs.docker.com/compose/install/
+
+## Build and run the container
+Make sure you are in the project root directory and execute the following instructions on a terminal.
+
+## For development environment
+
+```
+docker-compose up
 ```
 
-This runs the end-to-end tests against the Vite development server.
-It is much faster than the production build.
+This will build the Docker image, start the container and make the front-end available at http://localhost:5173/.
 
-But it's still recommended to test the production build with `test:e2e` before deploying (e.g. in CI environments):
+## Additional notes
+The command docker -v should return the installed Docker version.
+The command docker-compose -v should return the installed Docker Compose version.
 
-```sh
-npm run build
-npm run test:e2e
-```
 
-### Lint with [ESLint](https://eslint.org/)
+## Main dependencies
+- [Vue.js: JavaScript framework used to build the application.][3]
+- [Pinia: library used for managing the global state of the application.][4]
+- [Vue Router: library used for managing routes and navigation in the application.][5]
+- [Axios: library used for making HTTP requests.][6]
+- [Vee-validate: library used for form validation.][7]
+- [Vuetify: Open Source UI Library.][8]
 
-```sh
-npm run lint
-```
+[3]: https://vuejs.org/guide/quick-start.html
+[4]: https://pinia.vuejs.org/getting-started.html
+[5]: https://router.vuejs.org/installation.html
+[6]: https://axios-http.com/es/docs/intro
+[7]: https://vee-validate.logaretm.com/v4/guide/overview/
+[8]: https://vuetifyjs.com/en/
+
+## Architecture Design
+The file system is distributed as follows.
+
+- src/
+  - api/ (Where the axios instance is created and interceptors are set to use in the requests, in case, for example, a bearer token is needed.)
+  - assets/ (Where the static files to be compiled and the custom styles of the application are located.)
+  - components/ (Where the reusable Vue.js components are located.)
+  - composables/ (Where the composable functions are located, used to encapsulate logic that can be used in different views.)
+  - interfaces/ (Where the TypeScript interfaces created for typing are located.)
+  - layouts/ (Where the application layouts are located, where routers containing child routes are rendered.)
+  - plugins/ (Where the configurations of the plugins used in the application are located.)
+  - router/ (Where the configuration of the different routes to be used in the application is located, and where guards and functionalities to apply in each navigation would be placed.)
+  - stores/ (Where the stores of the different modules of the application are located.)
+  - views/ (Where the views to be rendered on each route are located and where the logic is executed to later distribute it to child components.)
+- App.vue (Root component.)
+- main.ts (Entry point of the application.)
+- vite.config.js: (Vite configuration for building the application.)
+- Dockerfile: (Docker configuration file for creating a Docker image of your application.)
+- docker-compose.yml: (Docker Compose configuration file for managing Docker containers.)
+- .env (Project environment variables)
+- package.json (Project dependencies and configuration)
+- .gitignore (Files and folders to ignore in Git)
+- README.md (Project documentation)
+
+## Usage
+Once logged into the application, you should be able to see a home page view where a top navigation bar is displayed. This navigation bar contains different navigation links, which currently only have mocked route addresses. Therefore, navigation is possible but leads to empty pages.
+
+Additionally, there is an option to Login, which opens a modal that allows the user to either log in to the application or sign up. Upon either of these selections, the user is ultimately logged into the application, and a logout button and an avatar with a mocked image appear. Clicking on this avatar should allow you to view the user's details.
+
+Furthermore, the home view includes a promotions carousel and options for available blogs.
+
+Additionally, sliders for the top five products in two random categories are displayed. Clicking on the category title navigates to the category's page where the product listing should be (currently a mocked route). Clicking on the product leads to the details of that product (currently a mocked route).
+
+## Disclaimer
+The handling of calls to the different endpoints was done in two ways (composable functions and Pinia actions) for the purpose of demonstrating different ways to access the information.
+
+The .env file is uploaded to Git only for the purpose of demonstrating its use in this challenge.

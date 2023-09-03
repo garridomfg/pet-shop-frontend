@@ -140,3 +140,8 @@ const formattedPrice = ((price: number) => {
   const exchangeRate = currencyStore.getExchangeRate(currencyStore.selectedCurrency)
   return (price * exchangeRate).toFixed(2)
 })
+```
+## Examples
+![Captura de pantalla 2023-09-03 190344](https://github.com/garridomfg/pet-shop-frontend/assets/66386829/3b4b530b-573a-4596-9f02-dda34cedce07)
+![Captura de pantalla 2023-09-03 190354](https://github.com/garridomfg/pet-shop-frontend/assets/66386829/41556c27-2ad3-4769-8aa8-5c243a0cf3e3)
+![Captura de pantalla 2023-09-03 190358](https://github.com/garridomfg/pet-shop-frontend/assets/66386829/59f7355f-03c6-4fe6-98fd-714b357561cb)

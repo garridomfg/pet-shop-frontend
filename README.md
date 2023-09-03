@@ -107,3 +107,36 @@ Additionally, sliders for the top five products in two random categories are dis
 The handling of calls to the different endpoints was done in two ways (composable functions and Pinia actions) for the purpose of demonstrating different ways to access the information.
 
 The .env file is uploaded to Git only for the purpose of demonstrating its use in this challenge.
+
+### Currency formatter package
+In order to use the currency formatter, you need to follow these steps
+## Installation
+
+You can install this package as a local dependency using the provided TGZ file.
+
+1. In your project, run: `npm install .\currency-formatter-2.0.0.tgz`
+
+## Usage
+
+```vue
+<template>
+  <currency-formatter />
+</template>
+
+<script>
+import CurrencyFormatter from 'currency-formatter';
+
+export default {
+  components: {
+    CurrencyFormatter,
+  },
+};
+</script>
+```
+
+Then, in the component with the data to parse, you will need to add a function as following to use the store from the currency-formatter and transform the data
+```
+const formattedPrice = ((price: number) => {
+  const exchangeRate = currencyStore.getExchangeRate(currencyStore.selectedCurrency)
+  return (price * exchangeRate).toFixed(2)
+})

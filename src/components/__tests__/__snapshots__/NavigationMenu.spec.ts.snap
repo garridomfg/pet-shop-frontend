@@ -1,0 +1,27 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Navigation Menu Tests > should render the component correctly 1`] = `
+"<div class=\\"d-flex align-center\\">
+  <div><button type=\\"button\\" class=\\"v-btn v-btn--elevated v-theme--light v-btn--density-default v-btn--size-large v-btn--variant-elevated text-white\\" aria-haspopup=\\"menu\\" aria-expanded=\\"false\\" aria-owns=\\"v-menu-1\\"><span class=\\"v-btn__overlay\\"></span><span class=\\"v-btn__underlay\\"></span>
+      <!----><span class=\\"v-btn__content\\" data-no-activator=\\"\\">Products <!----><!----></span>
+      <!---->
+      <!---->
+    </button>
+    <!--v-if-->
+  </div>
+  <div>
+    <!--v-if--><button type=\\"button\\" class=\\"v-btn v-btn--elevated v-theme--light v-btn--density-default v-btn--size-default v-btn--variant-elevated text-white\\" id=\\"Promotions\\"><span class=\\"v-btn__overlay\\"></span><span class=\\"v-btn__underlay\\"></span>
+      <!----><span class=\\"v-btn__content\\" data-no-activator=\\"\\">Promotions</span>
+      <!---->
+      <!---->
+    </button>
+  </div>
+  <div>
+    <!--v-if--><button type=\\"button\\" class=\\"v-btn v-btn--elevated v-theme--light v-btn--density-default v-btn--size-default v-btn--variant-elevated text-white\\" id=\\"Blog\\"><span class=\\"v-btn__overlay\\"></span><span class=\\"v-btn__underlay\\"></span>
+      <!----><span class=\\"v-btn__content\\" data-no-activator=\\"\\">Blog</span>
+      <!---->
+      <!---->
+    </button>
+  </div>
+</div>"
+`;

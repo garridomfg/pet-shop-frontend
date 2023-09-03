@@ -1,6 +1,7 @@
 <template>
   <div>
     <v-text-field
+      id="searchInput"
       color="primary"
       base-color="primary"
       label="Search products"
@@ -25,7 +26,7 @@ const { searchTerm, handleSearch } = useInput(emit)
 </script>
 
 <style>
- .v-text-field .v-input__details {
+.v-text-field .v-input__details {
   display: none;
- }
+}
 </style>

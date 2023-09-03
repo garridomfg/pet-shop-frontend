@@ -1,0 +1,60 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Home View tests > should match with snapshot 1`] = `
+"<div class=\\"v-row\\">
+  <div class=\\"v-col v-col-12 mx-auto d-flex flex-column align-center\\">
+    <div class=\\"search-bar\\">
+      <div class=\\"v-input v-input--horizontal v-input--center-affix v-input--density-default v-locale--is-ltr v-text-field\\">
+        <!---->
+        <div class=\\"v-input__control\\">
+          <div class=\\"v-field v-field--center-affix v-field--prepended v-field--variant-outlined v-theme--light v-locale--is-ltr\\">
+            <div class=\\"v-field__overlay\\"></div>
+            <div class=\\"v-field__loader\\">
+              <div class=\\"v-progress-linear v-theme--light v-locale--is-ltr\\" style=\\"top: 0px; height: 0px; --v-progress-linear-height: 2px; left: 50%; transform: translateX(-50%);\\" role=\\"progressbar\\" aria-hidden=\\"true\\" aria-valuemin=\\"0\\" aria-valuemax=\\"100\\">
+                <!---->
+                <div class=\\"v-progress-linear__background bg-primary\\" style=\\"width: 100%;\\"></div>
+                <transition-stub name=\\"fade-transition\\" appear=\\"false\\" persisted=\\"false\\" css=\\"true\\">
+                  <div class=\\"v-progress-linear__indeterminate\\">
+                    <div class=\\"v-progress-linear__indeterminate long bg-primary\\"></div>
+                    <div class=\\"v-progress-linear__indeterminate short bg-primary\\"></div>
+                  </div>
+                </transition-stub>
+                <!---->
+              </div>
+            </div>
+            <div class=\\"v-field__prepend-inner\\">
+              <!----><i class=\\"mdi-magnify mdi v-icon notranslate v-theme--light v-icon--size-default text-primary\\" aria-hidden=\\"true\\" base-color=\\"primary\\"></i>
+            </div>
+            <div class=\\"v-field__field\\" data-no-activator=\\"\\">
+              <!----><label class=\\"v-label v-field-label\\" for=\\"searchInput\\">
+                <!---->Search products
+              </label>
+              <!----><input size=\\"1\\" type=\\"text\\" id=\\"searchInput\\" aria-describedby=\\"searchInput-messages\\" class=\\"v-field__input\\">
+              <!---->
+            </div>
+            <!---->
+            <!---->
+            <div class=\\"v-field__outline text-primary\\">
+              <div class=\\"v-field__outline__start\\"></div>
+              <div class=\\"v-field__outline__notch\\"><label class=\\"v-label v-field-label v-field-label--floating\\" aria-hidden=\\"true\\" for=\\"searchInput\\">
+                  <!---->Search products
+                </label></div>
+              <div class=\\"v-field__outline__end\\"></div>
+              <!---->
+            </div>
+          </div>
+        </div>
+        <!---->
+        <div class=\\"v-input__details\\">
+          <transition-group-stub name=\\"slide-y-transition\\" tag=\\"div\\" appear=\\"false\\" persisted=\\"false\\" css=\\"true\\" class=\\"v-messages\\" role=\\"alert\\" aria-live=\\"polite\\" id=\\"searchInput-messages\\">
+            <!---->
+          </transition-group-stub>
+          <!---->
+        </div>
+      </div>
+    </div>
+    <!--v-if-->
+  </div>
+  <!--v-if-->
+</div>"
+`;

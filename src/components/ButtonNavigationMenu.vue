@@ -13,6 +13,7 @@
           variant="outlined"
           v-for="button in buttons"
           :key="button.label"
+          :id="button.label"
           @click="button.fn"
           :prepend-icon="button.icon"
         >
@@ -24,11 +25,13 @@
         </v-btn>
       </template>
       <login-form
+        id="loginForm"
         v-if="isLogin"
         :toggle-login-register="toggleLoginRegister"
         @on:close-overlay="closeOverlay"
       />
       <register-form
+        id="registerForm"
         v-else
         :toggle-login-register="toggleLoginRegister"
         @on:close-overlay="closeOverlay"

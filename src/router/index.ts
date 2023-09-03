@@ -39,7 +39,8 @@ const routes: RouteRecordRaw[] = [
   {
     path: '/recover',
     name: 'recover',
-    component: () => import(/* webpackChunkName: "recover-password-view" */ '@/views/RecoverPasswordView.vue')
+    component: () =>
+      import(/* webpackChunkName: "recover-password-view" */ '@/views/RecoverPasswordView.vue')
   },
   {
     path: '/:pathMatch(.*)+',
@@ -63,4 +64,5 @@ router.afterEach(() => {
   NProgress.done()
 })
 
+export { routes }
 export default router

@@ -8,6 +8,7 @@
           <v-list>
             <v-list-item
               v-for="item in dropdown.options"
+              :id="item.label"
               :key="item.label"
               :value="item.label"
               @click="props.handleNavigation(item.path)"
@@ -21,6 +22,7 @@
       <v-btn
         class="text-white"
         v-if="!dropdown.isDropDown"
+        :id="dropdown.options[0].label"
         @click="props.handleNavigation(dropdown.options[0].path)"
       >
         {{ dropdown.options[0].label }}
@@ -36,4 +38,3 @@ const props = defineProps<{
   handleNavigation: (path: string) => void
 }>()
 </script>
-../interfaces/navbar

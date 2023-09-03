@@ -1,0 +1,125 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Product Slider Tests > should render the component correctly 1`] = `
+"<div>
+  <p class=\\"slider-title text-capitalize\\">Pet Clean-Up And Odor Control</p>
+  <div class=\\"v-slide-group pa-4\\" tabindex=\\"0\\">
+    <!---->
+    <div class=\\"v-slide-group__container\\">
+      <div class=\\"v-slide-group__content\\" style=\\"transform: translateX(0px);\\">
+        <div class=\\"slider-card\\">
+          <div class=\\"v-responsive\\">
+            <div class=\\"v-responsive__sizer\\"></div>
+            <!---->
+            <div class=\\"v-responsive__content\\">
+              <div class=\\"v-responsive v-img v-img--booting\\" style=\\"height: 220px;\\">
+                <div class=\\"v-responsive__sizer\\"></div>
+                <transition-stub name=\\"fade-transition\\" appear=\\"true\\" persisted=\\"false\\" css=\\"true\\"><img class=\\"v-img__img v-img__img--cover\\" src=\\"http://pet-shop.buckhill.com.hr/api/v1/file/46b68633-a0f2-3b4e-8c0e-470e04b7362d\\" style=\\"display: none;\\"></transition-stub>
+                <transition-stub name=\\"fade-transition\\" appear=\\"false\\" persisted=\\"false\\" css=\\"true\\">
+                  <!---->
+                </transition-stub>
+                <!---->
+                <!---->
+                <!---->
+                <!---->
+              </div>
+            </div>
+          </div>
+          <p class=\\"text-decoration-underline mt-4 mb-2 font-weight-bold text-h6\\">Shout for Pets Odor and Urine Eliminator - Effective Way to Remove Puppy &amp; Dog Odors and Stains from Carpets &amp; Rugs</p>
+          <p class=\\"text-capitalize\\">pet clean-up and odor control</p>
+          <p class=\\"font-weight-bold text-h6\\">15.1</p>
+        </div>
+        <div class=\\"slider-card\\">
+          <div class=\\"v-responsive\\">
+            <div class=\\"v-responsive__sizer\\"></div>
+            <!---->
+            <div class=\\"v-responsive__content\\">
+              <div class=\\"v-responsive v-img v-img--booting\\" style=\\"height: 220px;\\">
+                <div class=\\"v-responsive__sizer\\"></div>
+                <transition-stub name=\\"fade-transition\\" appear=\\"true\\" persisted=\\"false\\" css=\\"true\\"><img class=\\"v-img__img v-img__img--cover\\" src=\\"http://pet-shop.buckhill.com.hr/api/v1/file/5cf8b142-c5d8-3ad4-bde9-bb202adeadd1\\" style=\\"display: none;\\"></transition-stub>
+                <transition-stub name=\\"fade-transition\\" appear=\\"false\\" persisted=\\"false\\" css=\\"true\\">
+                  <!---->
+                </transition-stub>
+                <!---->
+                <!---->
+                <!---->
+                <!---->
+              </div>
+            </div>
+          </div>
+          <p class=\\"text-decoration-underline mt-4 mb-2 font-weight-bold text-h6\\">Amazon Basics Dog and Puppy Pads, Leak-proof 5-Layer Pee Pads with Quick-dry Surface for Potty Training</p>
+          <p class=\\"text-capitalize\\">pet clean-up and odor control</p>
+          <p class=\\"font-weight-bold text-h6\\">24.82</p>
+        </div>
+        <div class=\\"slider-card\\">
+          <div class=\\"v-responsive\\">
+            <div class=\\"v-responsive__sizer\\"></div>
+            <!---->
+            <div class=\\"v-responsive__content\\">
+              <div class=\\"v-responsive v-img v-img--booting\\" style=\\"height: 220px;\\">
+                <div class=\\"v-responsive__sizer\\"></div>
+                <transition-stub name=\\"fade-transition\\" appear=\\"true\\" persisted=\\"false\\" css=\\"true\\"><img class=\\"v-img__img v-img__img--cover\\" src=\\"http://pet-shop.buckhill.com.hr/api/v1/file/1af8dd04-b8fe-3dad-8c5a-50e93f7ad1ec\\" style=\\"display: none;\\"></transition-stub>
+                <transition-stub name=\\"fade-transition\\" appear=\\"false\\" persisted=\\"false\\" css=\\"true\\">
+                  <!---->
+                </transition-stub>
+                <!---->
+                <!---->
+                <!---->
+                <!---->
+              </div>
+            </div>
+          </div>
+          <p class=\\"text-decoration-underline mt-4 mb-2 font-weight-bold text-h6\\">Fresh Wave Odor Removing Gel, 15 oz. (Pack of 2)</p>
+          <p class=\\"text-capitalize\\">pet clean-up and odor control</p>
+          <p class=\\"font-weight-bold text-h6\\">16.92</p>
+        </div>
+        <div class=\\"slider-card\\">
+          <div class=\\"v-responsive\\">
+            <div class=\\"v-responsive__sizer\\"></div>
+            <!---->
+            <div class=\\"v-responsive__content\\">
+              <div class=\\"v-responsive v-img v-img--booting\\" style=\\"height: 220px;\\">
+                <div class=\\"v-responsive__sizer\\"></div>
+                <transition-stub name=\\"fade-transition\\" appear=\\"true\\" persisted=\\"false\\" css=\\"true\\"><img class=\\"v-img__img v-img__img--cover\\" src=\\"http://pet-shop.buckhill.com.hr/api/v1/file/0fc80f84-36dd-3a6e-aacd-45d35438e7a0\\" style=\\"display: none;\\"></transition-stub>
+                <transition-stub name=\\"fade-transition\\" appear=\\"false\\" persisted=\\"false\\" css=\\"true\\">
+                  <!---->
+                </transition-stub>
+                <!---->
+                <!---->
+                <!---->
+                <!---->
+              </div>
+            </div>
+          </div>
+          <p class=\\"text-decoration-underline mt-4 mb-2 font-weight-bold text-h6\\">Nature’s Miracle Cage Cleaner 24 fl oz, Small Animal Formula, Cleans And Deodorizes Small Animal Cages, 2nd Edition</p>
+          <p class=\\"text-capitalize\\">pet clean-up and odor control</p>
+          <p class=\\"font-weight-bold text-h6\\">28.93</p>
+        </div>
+        <div class=\\"slider-card\\">
+          <div class=\\"v-responsive\\">
+            <div class=\\"v-responsive__sizer\\"></div>
+            <!---->
+            <div class=\\"v-responsive__content\\">
+              <div class=\\"v-responsive v-img v-img--booting\\" style=\\"height: 220px;\\">
+                <div class=\\"v-responsive__sizer\\"></div>
+                <transition-stub name=\\"fade-transition\\" appear=\\"true\\" persisted=\\"false\\" css=\\"true\\"><img class=\\"v-img__img v-img__img--cover\\" src=\\"http://pet-shop.buckhill.com.hr/api/v1/file/fd628a19-87ff-38a7-b665-20df1c3c5642\\" style=\\"display: none;\\"></transition-stub>
+                <transition-stub name=\\"fade-transition\\" appear=\\"false\\" persisted=\\"false\\" css=\\"true\\">
+                  <!---->
+                </transition-stub>
+                <!---->
+                <!---->
+                <!---->
+                <!---->
+              </div>
+            </div>
+          </div>
+          <p class=\\"text-decoration-underline mt-4 mb-2 font-weight-bold text-h6\\">Black Diamond Stoneworks Ur-in Control Eliminates Urine Odors – Removes Cat, Dog, Pet, Odors Human Smells from Carpet</p>
+          <p class=\\"text-capitalize\\">pet clean-up and odor control</p>
+          <p class=\\"font-weight-bold text-h6\\">19.38</p>
+        </div>
+      </div>
+    </div>
+    <!---->
+  </div>
+</div>"
+`;

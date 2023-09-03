@@ -19,7 +19,7 @@ const useApiPost = () => {
       responseData.value = data
       return data
     } catch (error: any) {
-      errorMessage.value = error.response.data.errors.length
+      errorMessage.value = error.response.data.errors
         ? error.response.data.errors
         : error.response.data.error
     } finally {

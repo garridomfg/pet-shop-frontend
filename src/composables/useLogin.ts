@@ -51,7 +51,7 @@ const useLogin = (emit?: EmitFunction) => {
       label: 'First Name*',
       class: 'v-col-6',
       rules: 'required',
-      readonly: false,
+      readonly: false
     },
     {
       value: undefined,
@@ -61,7 +61,7 @@ const useLogin = (emit?: EmitFunction) => {
       label: 'Last Name*',
       class: 'v-col-6',
       rules: 'required',
-      readonly: false,
+      readonly: false
     },
     {
       value: undefined,
@@ -71,7 +71,7 @@ const useLogin = (emit?: EmitFunction) => {
       label: 'Email Address*',
       class: 'v-col-12',
       rules: 'required|email',
-      readonly: false,
+      readonly: false
     },
     {
       value: undefined,
@@ -81,7 +81,7 @@ const useLogin = (emit?: EmitFunction) => {
       label: 'Phone Number*',
       class: 'v-col-12',
       rules: 'required',
-      readonly: false,
+      readonly: false
     },
     {
       value: undefined,
@@ -91,7 +91,7 @@ const useLogin = (emit?: EmitFunction) => {
       label: 'Address*',
       class: 'v-col-12',
       rules: 'required',
-      readonly: false,
+      readonly: false
     },
     {
       value: undefined,
@@ -101,7 +101,7 @@ const useLogin = (emit?: EmitFunction) => {
       label: 'Password*',
       class: 'v-col-12',
       rules: 'required|minLength',
-      readonly: false,
+      readonly: false
     },
     {
       value: undefined,
@@ -111,7 +111,7 @@ const useLogin = (emit?: EmitFunction) => {
       label: 'Confirm Password*',
       class: 'v-col-12',
       rules: 'required|confirmed:@password',
-      readonly: false,
+      readonly: false
     },
     {
       value: false,
@@ -120,7 +120,7 @@ const useLogin = (emit?: EmitFunction) => {
       as: 'checkbox',
       label: 'I want to receive inspiration, marketing promotions and updates via email.',
       class: 'v-col-12',
-      readonly: false,
+      readonly: false
     }
   ])
 
@@ -149,11 +149,10 @@ const useLogin = (emit?: EmitFunction) => {
   const handleRequest = async (url: string, user: UserCredentials, successMessage?: string) => {
     await postData(url, user)
     if (!responseData.value) return
+    
     if (responseData.value.success) {
       emit!('on:close-overlay')
-      if (successMessage) {
-        onTriggerToast(successMessage, 'success', 1000)
-      }
+      onTriggerToast(successMessage!, 'success', 1000)
     }
   }
 

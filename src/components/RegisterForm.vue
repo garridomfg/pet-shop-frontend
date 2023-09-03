@@ -33,12 +33,12 @@ const props = defineProps<{
 }>()
 
 const emit = defineEmits<{
-  (e: 'on:close-overlay'): void,
+  (e: 'on:close-overlay'): void
   (e: 'on:toggle-menu'): void
 }>()
 
 const { controlledValues, validate, resetForm } = useForm()
-const { registerFields, handleRegister, errorMessage, isLoading } = useLogin(emit)
+const { registerFields, handleRegister, errorMessage, isLoading, onTriggerToast } = useLogin(emit)
 
 const handleSubmit = async () => {
   const { valid } = await validate()
@@ -47,6 +47,10 @@ const handleSubmit = async () => {
     ...controlledValues.value
   }
   await handleRegister(user)
+  if (errorMessage.value) {
+    onTriggerToast('Something went wrong', 'error', 1000)
+    return
+  }
   resetForm()
   props.toggleLoginRegister()
 }

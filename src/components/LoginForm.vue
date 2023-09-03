@@ -47,7 +47,7 @@ const emit = defineEmits<{
 }>()
 
 const { controlledValues } = useForm()
-const { handleRecoverPassword, loginFields } = useLogin()
+const { handleRecoverPassword, loginFields, onTriggerToast } = useLogin()
 const authStore = useAuthStore()
 const usersStore = useUsersStore()
 
@@ -55,6 +55,8 @@ const handleSubmit = async () => {
   const user: UserRegistration = { ...controlledValues.value }
   await authStore.login(user)
   await usersStore.getUser()
+  if (!usersStore.currentUser) return
+  onTriggerToast('Successfully logged', 'success', 1000)
   emit('on:close-overlay')
 }
 </script>
